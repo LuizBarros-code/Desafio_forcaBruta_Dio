@@ -68,11 +68,13 @@ medusa -h 192.168.56.102 -u msfadmin -P wordlists/ftp_passwords.txt -M ftp
 
 #### Resultados
 
-![scan - Medusa](images/Screenshot%2025-10-16%211748.png)
+![scan - Medusa](images/Screenshot%202025-10-16%20211748.png)
 *Figura 2: Execução do ataque de força bruta no FTP*
 
 - [x] Sucesso: Senha "msfadmin" encontrada para o usuário "msfadmin"
-![resuldado invadido - Medusa](images/Screenshot%2025-10-16%21235a2.png)
+
+![Resultado do ataque FTP](images/Screenshot%202025-10-16%20212352.png)
+*Figura 3: Resultado bem-sucedido do ataque FTP*
 
 
 ### 2. Ataque em Formulário Web (DVWA)
@@ -100,7 +102,7 @@ medusa -h 127.0.0.1 -u admin -P wordlists/dvwa_passwords.txt -M http \
 ```
 
 #### Resultados
-![Ataque DVWA - Medusa](images/Screenshot%2025-10-16%211318.png)
+![Ataque DVWA - Medusa](images/Screenshot%202025-10-16%20211318.png)
 *Figura 4: Execução do ataque de força bruta no DVWA*
 
 Todas as tentativas terá certo provavelmente por que não configurei o DVWA corretamente que eu peguei do git: https://github.com/digininja/DVWA
@@ -126,19 +128,30 @@ medusa -h [IP_TARGET] -U wordlists/usernames.txt -p wordlists/password.txt -M sm
 - [ ] Tempo total: [ ] 
 
 ## 📊 Análise de Resultados
-![Enumeração - SMB](images/Screenshot%2025-10-16%211434.png)
-![Enumeração - SMB](images/Screenshot%2025-10-16%211620.png)
+![Enumeração - SMB](images/Screenshot%202025-10-16%20211434.png)
+*Figura 5: Enumeração de usuários SMB*
+
+![Ataque SMB - Medusa](images/Screenshot%202025-10-16%20211620.png)
+*Figura 6: Execução do ataque de força bruta SMB*
 
 ### Vulnerabilidades Identificadas
 1. **FTP**: Serviço vsftpd vulnerável a ataques de força bruta com senhas fracas
 2. **DVWA**: Aplicação web vulnerável com credenciais padrão (admin/password)
+3. **SMB**: Serviço SMB vulnerável a enumeração de usuários e ataques de força bruta
 
-
+## 📸 Evidências Visuais
 
 ### Resumo dos Testes
 - ✅ **FTP**: Ataque bem-sucedido com credenciais msfadmin/msfadmin
-- ✅ **DVWA**: Ataque bem-sucedido com credenciais admin/password
-- ✅ **SMB**
+- ✅ **DVWA**: Ataque bem-sucedido com credenciais admin/password  
+- ✅ **SMB**: Enumeração de usuários e teste de força bruta realizados
+
+### Galeria de Imagens
+Todas as capturas de tela dos testes realizados estão organizadas nas seções correspondentes acima, mostrando:
+- Configuração do ambiente
+- Execução dos comandos
+- Resultados dos ataques
+- Evidências de sucesso
 
 
 
